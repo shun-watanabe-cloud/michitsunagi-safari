@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>みちつなぎサファリ</title>
+<meta name="description" content="みちのブロックをつないで どうぶつを ゴールまで つれていく プログラミングあそび">
+<meta name="theme-color" content="#7cc35a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="みちつなぎ">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="home" class="screen">
+  <div class="home-head">
+    <div class="logo" aria-hidden="true">🐘</div>
+    <h1>みちつなぎ<br>サファリ</h1>
+    <p class="lead">みちの ブロックを つないで<br>どうぶつを おうちまで つれていこう！</p>
+  </div>
+  <div id="stageList" class="stage-list"></div>
+  <p class="home-foot"><button id="resetProgress" class="link-btn" type="button">きろくを けす</button></p>
+</section>
+
+<section id="play" class="screen hidden">
+  <header class="bar">
+    <button id="backBtn" class="icon-btn" type="button" aria-label="ステージえらびに もどる">◀</button>
+    <div class="bar-title">
+      <div id="stageNo" class="stage-no"></div>
+      <div id="stageTitle" class="stage-title"></div>
+    </div>
+    <div id="bestStars" class="best-stars" aria-label="さいこうきろく"></div>
+  </header>
+  <p id="hint" class="hint"></p>
+  <main class="field">
+    <div id="boardWrap" class="board-wrap">
+      <div id="board" class="board"></div>
+    </div>
+    <div class="side">
+      <div id="palette" class="palette" aria-label="みちの ブロック"></div>
+      <div class="controls">
+        <button id="clearBtn" class="btn sub" type="button">やりなおし</button>
+        <button id="goBtn" class="btn go" type="button">しゅっぱつ！</button>
+      </div>
+    </div>
+  </main>
+  <div id="toast" class="toast hidden" role="status"></div>
+</section>
+
+<div id="clear" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="clearTitle">
+  <div class="card">
+    <div id="clearTitle" class="clear-title">ゴール！</div>
+    <div id="clearStars" class="clear-stars"></div>
+    <div id="clearMsg" class="clear-msg"></div>
+    <div class="card-btns">
+      <button id="againBtn" class="btn sub" type="button">もういちど</button>
+      <button id="nextBtn" class="btn go" type="button">つぎへ ▶</button>
+    </div>
+    <button id="toListBtn" class="link-btn" type="button">ステージえらびへ</button>
+  </div>
+</div>
+
+<div id="ghost" class="ghost hidden" aria-hidden="true"></div>
+
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
